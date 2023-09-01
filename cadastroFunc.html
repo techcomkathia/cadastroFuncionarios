@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pht-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro funcionários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        Cadastro de funcionarios
+    </header>
+
+    <form id="formCadastro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" class="obrigatorio" >
+        <span  class="mensagemErro">
+            <p>O nome só pode conter letras</p>
+            <p>O nome deve conter mais que 3 letras</p> 
+        </span>
+      
+        <label for="nome">Sobrenome:</label>
+        <input type="text" id="sobrenome" class="obrigatorio">
+        <span  class="mensagemErro">
+            <p>O nome só pode conter letras</p>
+            <p>O nome deve conter pelo menos 2 letras</p> 
+        </span>
+
+      
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" class="obrigatorio" >
+        <span class="mensagemErro">
+            <p>O CPF deve conter 11 dígitos numéricos</p> 
+        </span>
+
+      
+        <label for="data-nascimento">Data de Nascimento:</label>
+        <input type="date" id="data-nascimento"  class="obrigatorio" >
+        <span  class="mensagemErro">
+            <p>O funcionário deve ter no mínimo 18 anos e no máximo 75 anos</p>  
+        </span>
+       
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo"class="obrigatorio">
+            <option value="" disabled selected>Selecione o sexo </option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="nao-informar">Prefiro não informar</option>
+        </select>
+            <span  class="mensagemErro">
+                <p>Selecione um campo </p> 
+            </span>
+       
+
+        <label for="cargo">Cargo:</label>
+        <select name="cargo" id="cargo" placeholder="selecione o cargo" class="obrigatorio">
+            <option value="" disabled selected>Selecione um cargo</option>
+            <option value="professor">Professor</option>
+            <option value="monitor">Monitor</option>
+            <option value="recepcionista">Recepcionista</option>
+            <option value="coordenador">Coordenador</option>
+            <option value="auxiliar">Auxiliar</option>  
+        </select>
+            <span  class="mensagemErro"> 
+                <p>Selecione um campo </p>
+            </span>
+
+        <label for="imagem-perfil">Imagem de Perfil (URL):</label>
+        <input type="url" id="imagem-perfil" name="imagem-perfil" class="obrigatorio">
+        <span class="mensagemErro">
+            <p>A imagem de perfil precisa ser uma URL </p>
+        </span>
+
+       
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" class="obrigatorio">
+        <span  class="mensagemErro"> 
+            <p>Este não é um formato de email válido</p>
+        </span>
+
+       
+        <button id="btnCadastrar">Cadastrar</button>
+    </form>
+
+    <script src="cadastro.js"></script>
+
+</body>
+
+    
+</body>
+</html>
