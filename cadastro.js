@@ -1,9 +1,4 @@
-const menu = document.getElementById("menu");
 const formCadastro = document.getElementById("formCadastro");
-const formAlterarSenha = document.getElementById("formAlterarSenha");
-const btnCadastrar = document.getElementById("btnCadastrar");
-const btnAlterarSenha = document.getElementById("btnAlterarSenha");
-
 
 const campos = document.getElementsByClassName("obrigatorio")
 const mensagensErro = document.getElementsByClassName("mensagemErro")
@@ -31,7 +26,7 @@ function removerErro(index){
 function validacaoNome(){
     let indice = 0
     const nome = campos[indice].value.trim(); 
-    const regex = /^[A-Za-z ]+$/
+    const regex = /^[A-Za-zà-ö' ]+$/
     
     if(nome.length < 3){
         mostrarErro(0)        
@@ -48,8 +43,8 @@ function validacaoNome(){
 function validacaoSobrenome(){
     let indice =1
     const sobrenome = campos[indice].value.trim()
-    const regex = /^[A-Za-z ]+$/
-    const regexTamanho = /^[A-Za-z]{2,}$/
+    const regex = /^[A-Za-zà-ö' ]+$/
+    const regexTamanho = /^[A-Za-zà-ö' ]{2,}$/
     
     if(!regexTamanho.test(sobrenome)){
         mostrarErro(indice)        
@@ -82,19 +77,16 @@ function validacaoCPF(){
 
 
 
-function validarDataNasc(){
-    let indice =3
-
-    const dataNascimento = new Date(campos[3].value);
+function validarDataNasc() {
+    const indice = 3;
+    const dataNascimento = new Date(campos[indice].value);
     const dataAtual = new Date();
-    
     const idadeMinima = 18;
     const idadeMaxima = 75;
-    
-    const dataLimiteInferior = new Date(dataAtual.getFullYear() - idadeMaxima, dataAtual.getMonth(), dataAtual.getDate());
-    const dataLimiteSuperior = new Date(dataAtual.getFullYear() - idadeMinima, dataAtual.getMonth(), dataAtual.getDate());
-    
-    if (dataNascimento < dataLimiteSuperior || dataNascimento > dataLimiteInferior) {
+
+    const anosDiferenca = dataAtual.getFullYear() - dataNascimento.getFullYear();
+
+    if (anosDiferenca < idadeMinima || anosDiferenca > idadeMaxima) {
         mostrarErro(indice);
     } else {
         removerErro(indice);
@@ -113,9 +105,9 @@ function validarCampoSelecionado(indice){
 
 function validarImagemPerfil(){
     const indice = 6
-    const regex = /^(ftp|http|https):\/\/[^ "]+$/;
+    const regex = /^(ftp|http|https):\/\/[^ \n"]+$/;
 
-    if(!regex.test(campos[indice])){
+    if(!regex.test(campos[indice].value)){
         mostrarErro(indice);
     } else {
         removerErro(indice);
@@ -126,8 +118,9 @@ function validarImagemPerfil(){
 
 function validarEmail(){
     const indice = 7
+    const  regex = /[a-z._0-9]+@[^ ]+\.[^ ]{2,}/
     const email= campos[indice].value
-    if (!/[a-z]+@[\S]+\.\S+/.test(email)) {
+    if (!regex.test(email)) {
        mostrarErro(indice)
     }   
     else{
@@ -143,6 +136,26 @@ campos[2].addEventListener("blur", validacaoCPF)
 campos[3].addEventListener("blur", validarDataNasc)
 campos[4].addEventListener("blur", ()=>{validarCampoSelecionado(4)})
 campos[5].addEventListener("blur", ()=>{validarCampoSelecionado(5)})
+campos[6].addEventListener("blur", validarImagemPerfil)
 campos[7].addEventListener("blur", validarEmail)
 
 
+function validarFormulario() {
+
+    // Verifique se há algum campo com erro
+    for (let i = 0; i < campos.length; i++) {
+        if (mensagensErro[i].style.display === 'block') {
+            return false; // Há um campo com erro, não envie o formulário
+        }
+    }
+    // Se não houver nenhum campo com erro, envie o formulário
+    formCadastro.submit();
+}
+
+formCadastro.addEventListener("submit", function (event) {
+    // Impedir o comportamento padrão do formulário
+    event.preventDefault();
+
+    // Chame a função de validação do formulário
+    validarFormulario();
+});
