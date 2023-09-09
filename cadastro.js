@@ -140,6 +140,27 @@ campos[6].addEventListener("blur", validarImagemPerfil)
 campos[7].addEventListener("blur", validarEmail)
 
 
+function enviarDadosParaAPI(dados) {
+    fetch('http://localhost:3000/usuarios', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dados),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Dados enviados com sucesso:', data);
+       
+    })
+    .catch(error => {
+        console.error('Erro ao enviar os dados:', error);
+        
+    });
+}
+
+
+
 function validarFormulario() {
 
     // Verifique se há algum campo com erro
@@ -148,14 +169,29 @@ function validarFormulario() {
             return false; // Há um campo com erro, não envie o formulário
         }
     }
+
+    const dados = {
+        nome: campos[0].value,
+        sobrenome: campos[1].value,
+        cpf: campos[2].value,
+        dataNascimento: campos[3].value,
+        sexo: campos[4].value,
+        cargo: campos[5].value,
+        imagemPerfil: campos[6].value,
+        email: campos[7].value,
+        senha: campos[2].value
+    };
     // Se não houver nenhum campo com erro, envie o formulário
-    formCadastro.submit();
+    enviarDadosParaAPI(dados);
 }
+
+
+
 
 formCadastro.addEventListener("submit", function (event) {
     // Impedir o comportamento padrão do formulário
     event.preventDefault();
-
     // Chame a função de validação do formulário
     validarFormulario();
 });
+

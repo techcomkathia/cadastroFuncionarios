@@ -66,8 +66,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-.mensagemErro,
-.mensagemErroSenha{
+.mensagemErro{
     font: message-box;
     font-size: small;
     color: red;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro funcionários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        Cadastro de funcionarios
+    </header>
+
+    <form id="formAlterarSenha">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  class="obrigatorio">
+        <span  id="mensagemErroEmail" class="mensagemErro">
+            <p>Email inválido</p>
+        </span>
+        <br>
+
+        <label for="Senha antiga">Senha padrão:</label>
+        <input type="password" id="senhaAntiga"  class="obrigatorio">
+        <span  id="mensagemErroSenhaAntiga" class="mensagemErro">
+            <p>a senha inserida não confere</p>
+        </span>
+        <br>
+
+        <label for="novaSenha">Nova Senha:</label>
+        <input type="text" id="novaSenha" class="obrigatorio">
+        <span  id="mensagemErroSenha" class="mensagemErro">
+            <p>A nova senha deve conter:</p>
+            <ul>
+                <li>Ao menos 8 caracteres;</li>
+                <li>Ao menos 1 número ;</li>
+                <li>Ao menos 1 letra menúscula; </li>
+                <li>Ao menos 1 letra maiúscula; </li>
+                <li>Ao menos um caracter especial.</li>
+            </ul>
+            
+        </span>
+        <br>
+ 
+        <label for="confirmeSenha">Confirme a senha:</label>
+        <input type="text" id="confirmeSenha" class="obrigatorio">
+        <span id="mensagemSenhasNaoIguais" class="mensagemErro">
+            <p>As senhas não são iguais</p>
+        </span>
+        <br>
+
+        <button id="btnAlterarSenha" >Alterar senha</button>
+        
+    </form>
+
+    <script src="senha.js"></script>
+
+</body>
+
+    
+</body>
+</html>
