@@ -78,3 +78,32 @@ button:hover {
 #exibirSenha{
     display: inline;
 }
+
+
+#lista-usuarios {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para cada div de usuário */
+.usuario {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Estilo para a imagem de perfil */
+.usuario img {
+    width: 800px;
+    height: auto;
+}
+
+/* Estilo para os dados do usuário */
+.usuario p {
+    margin: 10px 0;
+}
