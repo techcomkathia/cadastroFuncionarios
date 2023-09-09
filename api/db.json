@@ -7,8 +7,8 @@
       "cpf": "12345678901",
       "dataNascimento": "1990-05-15",
       "sexo": "masculino",
-      "cargo": "desenvolvedor",
-      "imagemPerfil": "https://thispersondoesnotexist.com/",
+      "cargo": "Monitor",
+      "imagemPerfil": "https://images.unsplash.com/photo-1690644899489-efeb8ca03323?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fGhvbWVtJTIwYWR1bHRvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       "email": "joao@example.com",
       "senha": "12345678901"
     },
@@ -19,7 +19,7 @@
       "cpf": "98765432109",
       "dataNascimento": "1985-08-20",
       "sexo": "feminino",
-      "cargo": "designer",
+      "cargo": "Recepcionista",
       "imagemPerfil": "https://images.unsplash.com/photo-1602442787305-decbd65be507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
       "email": "maria@example.com",
       "senha": "123456789Ll!"
@@ -31,7 +31,7 @@
       "cpf": "56789012345",
       "dataNascimento": "1992-03-10",
       "sexo": "masculino",
-      "cargo": "gerente",
+      "cargo": "Coordenador",
       "imagemPerfil": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       "email": "pedro@example.com",
       "senha": "56789012345"
@@ -43,7 +43,7 @@
       "cpf": "23456789012",
       "dataNascimento": "1988-11-28",
       "sexo": "feminino",
-      "cargo": "analista",
+      "cargo": "Auxiliar",
       "imagemPerfil": "https://images.unsplash.com/photo-1571445556382-453d9e858ea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
       "email": "ana@example.com",
       "senha": "23456789012"
@@ -55,8 +55,8 @@
       "cpf": "65432109876",
       "dataNascimento": "1995-02-05",
       "sexo": "masculino",
-      "cargo": "engenheiro",
-      "imagemPerfil": "https://example.com/imagem5.jpg",
+      "cargo": "Auxiliar",
+      "imagemPerfil": "https://images.unsplash.com/photo-1524666041070-9d87656c25bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYwfHxob21lbSUyMGFkdWx0b3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
       "email": "luiz@example.com",
       "senha": "65432109876"
     },
@@ -67,7 +67,7 @@
       "cpf": "34567890123",
       "dataNascimento": "1991-07-15",
       "sexo": "feminino",
-      "cargo": "analista",
+      "cargo": "Professor",
       "imagemPerfil": "https://images.unsplash.com/photo-1584361853901-dd1904bb7987?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
       "email": "clara@example.com",
       "senha": "34567890123"
@@ -79,7 +79,7 @@
       "cpf": "76543210987",
       "dataNascimento": "1987-04-03",
       "sexo": "masculino",
-      "cargo": "programador",
+      "cargo": "Auxiliar",
       "imagemPerfil": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
       "email": "rafael@example.com",
       "senha": "76543210987"
@@ -91,7 +91,7 @@
       "cpf": "45678901234",
       "dataNascimento": "1983-09-22",
       "sexo": "feminino",
-      "cargo": "designer",
+      "cargo": "Recepcionista",
       "imagemPerfil": "https://images.unsplash.com/photo-1539800925050-60b19309954e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1015&q=80",
       "email": "sofia@example.com",
       "senha": "45678901234"
@@ -103,7 +103,7 @@
       "cpf": "87654321098",
       "dataNascimento": "1994-06-18",
       "sexo": "masculino",
-      "cargo": "engenheiro",
+      "cargo": "Professor",
       "imagemPerfil": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
       "email": "carlos@example.com",
       "senha": "87654321098"
@@ -115,7 +115,7 @@
       "cpf": "78901234567",
       "dataNascimento": "1986-12-07",
       "sexo": "feminino",
-      "cargo": "gerente",
+      "cargo": "Coordenador",
       "imagemPerfil": "https://images.unsplash.com/photo-1610630536483-a56b494c3f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=986&q=80",
       "email": "mariana@example.com",
       "senha": "78901234567"
@@ -126,19 +126,19 @@
       "cpf": "11122233344",
       "dataNascimento": "1955-04-02",
       "sexo": "feminino",
-      "cargo": "professor",
+      "cargo": "Professor",
       "imagemPerfil": "https://images.unsplash.com/photo-1693498077567-b5b94f2d1419?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
       "email": "kathia@gmail.com",
       "senha": "11122233344",
       "id": 11
     },
     {
-      "nome": "Cleitinho",
+      "nome": "Cleiton",
       "sobrenome": "Junior",
       "cpf": "11212233344",
       "dataNascimento": "2000-02-02",
       "sexo": "masculino",
-      "cargo": "auxiliar",
+      "cargo": "Auxiliar",
       "imagemPerfil": "https://images.unsplash.com/photo-1693498077567-b5b94f2d1419?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80",
       "email": "cleitinho@gmail.com",
       "senha": "11212233344",

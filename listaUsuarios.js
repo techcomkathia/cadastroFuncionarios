@@ -39,7 +39,6 @@ async function obterTodosUsuarios() {
     }
 }
 
-
 async function exibirListaUsuarios() {
     const listaUsuarios = await obterTodosUsuarios();
 
@@ -49,10 +48,7 @@ async function exibirListaUsuarios() {
     if (listaUsuarios.length === 0) {
         listaUsuariosDiv.innerHTML = 'Nenhum usuário encontrado.';
     } else {
-        const ul = document.createElement('ul');
         listaUsuarios.forEach(usuario => {
-            const li = document.createElement('li');
-            
             // Criar uma div para o usuário e adicionar a classe "usuario"
             const divUsuario = document.createElement('div');
             divUsuario.classList.add('usuario');
@@ -71,11 +67,9 @@ async function exibirListaUsuarios() {
             
             divUsuario.appendChild(dadosUsuario);
 
-            // Adicionar a div do usuário à lista
-            li.appendChild(divUsuario);
-            ul.appendChild(li);
+            // Adicionar a div do usuário à listaUsuariosDiv
+            listaUsuariosDiv.appendChild(divUsuario);
         });
-        listaUsuariosDiv.appendChild(ul);
     }
 }
 

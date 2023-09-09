@@ -3,6 +3,7 @@ const mensagensErro = document.getElementsByClassName("mensagemErro")
 const formSenha = document.getElementById("formAlterarSenha")
 const btnAlterarSenha = document.getElementById("btnAlterarSenha")
 let usuario = []
+const mostrarSenhaCheckbox = document.getElementById('mostrarSenha');
 
 console.log(campos)
 console.log(mensagensErro)
@@ -26,6 +27,23 @@ function removerErro(mensagem){
 formSenha.addEventListener("submit", function (event) {
     event.preventDefault();
 });
+
+
+function mostarSenhas() {    
+
+    if (mostrarSenhaCheckbox.checked) {
+        campos[1].type = 'text';
+				campos[2].type = 'text';
+				campos[3].type = 'text';
+    } else {
+				campos[1].type = 'password';
+				campos[2].type = 'password';
+				campos[3].type = 'password';
+    }
+}
+
+
+mostrarSenhaCheckbox.addEventListener('change', mostarSenhas);
 
 function validarSenha(){
     const senhaValida = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
@@ -82,7 +100,7 @@ async function obterDadosUsuario(email) {
 
 async function verificarSenhaAntiga(email, senhaAntiga) {
     try {
-        const usuario = await obterDadosUsuario(email);
+        usuario = await obterDadosUsuario(email);
         console.log(usuario); // Agora você tem acesso ao objeto de usuário
 
         if (usuario.senha!= senhaAntiga){
@@ -128,6 +146,7 @@ async function substituirSenha(id, novaSenha) {
             throw new Error('Erro ao substituir a senha');
         }
         const data = await response.json();
+        alert("Senha alterada com sucesso")
         console.log('Senha substituída com sucesso:', data);
     } catch (error) {
         console.error(error.message);
