@@ -30,7 +30,6 @@ formSenha.addEventListener("submit", function (event) {
 function validarSenha(){
     const senhaValida = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9]).{8,}$/;
     const novaSenha = campos[2].value
-
     if (!senhaValida.test(novaSenha) ) {
         mostrarErro(mensagensErro[2]) 
     }       
@@ -49,23 +48,17 @@ async function obterDadosUsuario(email) {
                 'Content-Type': 'application/json',
             },
         });
-
         if (!response.ok) {
             mostrarErro(mensagensErro[0])
             throw new Error('Erro ao encontrar usuário');
         }
-        
-
         const data = await response.json();
-
         if (data.length==0){
             mostrarErro(mensagensErro[0])
         }
-        
         else{
             console.log('Usuário encontrado com sucesso:', data);
             removerErro(mensagensErro[0])
-
             usuario = {
                 id: data[0].id,
                 nome: data[0].nome,
@@ -78,12 +71,8 @@ async function obterDadosUsuario(email) {
                 email: data[0].email,
                 senha: data[0].senha
             };
-
             return usuario;
-
         }
-
-        
     } catch (error) {
         console.error(error);
         throw error; 
@@ -91,10 +80,7 @@ async function obterDadosUsuario(email) {
 }
 
 
-
-
 async function verificarSenhaAntiga(email, senhaAntiga) {
-
     try {
         const usuario = await obterDadosUsuario(email);
         console.log(usuario); // Agora você tem acesso ao objeto de usuário
@@ -106,8 +92,6 @@ async function verificarSenhaAntiga(email, senhaAntiga) {
             // substituirSenha(usuario.email, novaSenha)
             console.log("as senhas conferem")
         }
-
-
     } catch (error) {
         // Lide com o erro aqui
         console.error('Erro ao buscar usuário:', error.message);
@@ -130,42 +114,36 @@ campos[2].addEventListener("blur", validarSenha)
 campos[3].addEventListener("blur", verificarSenhasNovasSaoIguais)
 
 
-function substituirSenha(id, novaSenha) {
-  
-    fetch(`http://localhost:3000/usuarios/${id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({senha: novaSenha})
-    })
-      .then(response => {
+async function substituirSenha(id, novaSenha) {
+    try {
+        const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ senha: novaSenha })
+        });
+
         if (!response.ok) {
-          throw new Error('Erro ao substituir a senha');
+            throw new Error('Erro ao substituir a senha');
         }
-        return response.json();
-      })
-      .then(data => {
+        const data = await response.json();
         console.log('Senha substituída com sucesso:', data);
-      })
-      .catch(error => {
-        console.error(error.massege);
-      });
-  }
+    } catch (error) {
+        console.error(error.message);
+    }
+}
 
   
 function atualizarSenhaAPI() {
-
     // Verifique se há algum campo com erro
     for (let i = 0; i < campos.length; i++) {
         if (mensagensErro[i].style.display === 'block') {
             return false; // Há um campo com erro, não envie o formulário
         }
     }
-
-        // Se não houver nenhum campo com erro, envie o formulário
-
-   substituirSenha(usuario.id, campos[3].value);
+    // Se não houver nenhum campo com erro, envie o formulário
+    substituirSenha(usuario.id, campos[3].value);
 }
 
 btnAlterarSenha.addEventListener("click", atualizarSenhaAPI)
